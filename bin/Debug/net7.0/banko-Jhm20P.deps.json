@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v7.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v7.0": {
+      "banko-Jhm20P/1.0.0": {
+        "runtime": {
+          "banko-Jhm20P.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "banko-Jhm20P/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

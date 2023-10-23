@@ -1,0 +1,14 @@
+/home/reuter/github/banko-Jhm20P/bin/Debug/net7.0/banko-Jhm20P
+/home/reuter/github/banko-Jhm20P/bin/Debug/net7.0/banko-Jhm20P.deps.json
+/home/reuter/github/banko-Jhm20P/bin/Debug/net7.0/banko-Jhm20P.runtimeconfig.json
+/home/reuter/github/banko-Jhm20P/bin/Debug/net7.0/banko-Jhm20P.dll
+/home/reuter/github/banko-Jhm20P/bin/Debug/net7.0/banko-Jhm20P.pdb
+/home/reuter/github/banko-Jhm20P/obj/Debug/net7.0/banko-Jhm20P.GeneratedMSBuildEditorConfig.editorconfig
+/home/reuter/github/banko-Jhm20P/obj/Debug/net7.0/banko-Jhm20P.AssemblyInfoInputs.cache
+/home/reuter/github/banko-Jhm20P/obj/Debug/net7.0/banko-Jhm20P.AssemblyInfo.cs
+/home/reuter/github/banko-Jhm20P/obj/Debug/net7.0/banko-Jhm20P.csproj.CoreCompileInputs.cache
+/home/reuter/github/banko-Jhm20P/obj/Debug/net7.0/banko-Jhm20P.dll
+/home/reuter/github/banko-Jhm20P/obj/Debug/net7.0/refint/banko-Jhm20P.dll
+/home/reuter/github/banko-Jhm20P/obj/Debug/net7.0/banko-Jhm20P.pdb
+/home/reuter/github/banko-Jhm20P/obj/Debug/net7.0/banko-Jhm20P.genruntimeconfig.cache
+/home/reuter/github/banko-Jhm20P/obj/Debug/net7.0/ref/banko-Jhm20P.dll
