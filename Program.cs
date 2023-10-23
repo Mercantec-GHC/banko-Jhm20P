@@ -22,18 +22,18 @@ using System.Globalization;
 
 
 string[,] firstBankoCard = { { " ", " ", "20", "30", "43", "55", " ", "70", " " }, { "4", "14", " ", "33", "44", " ", "67", " ", " " }, { " ", " ", "29", " ", "49", " ", "68", "78", "87" } };
-for (int i = 0; i < firstBankoCard.GetLength(0); i++)
-{
-    for (int j = 0; j < firstBankoCard.GetLength(1); j++)
-    {
+// for (int i = 0; i < firstBankoCard.GetLength(0); i++)
+// {
+//     for (int j = 0; j < firstBankoCard.GetLength(1); j++)
+//     {
 
-        foreach (int numbers in firstBankoCard[i, j])
-        {
-            foreach (int number in firstBankoCard[i, j]){
 
-            string bankoCard = string.Join(" ", firstBankoCard[numbers, number]);
-            System.Console.WriteLine(bankoCard);
-            }
-        }
-    }
+//             string bankoCard = string.Join(" ", firstBankoCard[i, j]);
+//             System.Console.WriteLine(bankoCard);
+//     }
+// }
+
+foreach (string number in firstBankoCard){
+    string bankoCard2 = String.Join(number, number);
+    System.Console.WriteLine(bankoCard2);
 }
