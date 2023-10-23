@@ -33,7 +33,18 @@ string[,] firstBankoCard = { { " ", " ", "20", "30", "43", "55", " ", "70", " " 
 //     }
 // }
 
-foreach (string number in firstBankoCard){
-    string bankoCard2 = String.Join(number, number);
-    System.Console.WriteLine(bankoCard2);
+// foreach (string number in firstBankoCard){
+//     string bankoCard2 = String.Join(number, number);
+//     System.Console.WriteLine(bankoCard2);
+// }
+//i need to display the numbers in the array in a 3x9 grid
+List<List<int>> numbers = new List<List<int>>();
+Random number = new Random();
+int firstRow = number.Next(0, 91);
+int seccondRow = number.Next(0, 91);
+int thirdRow = number.Next(0, 91);
+for (int i = 0; i<3; i++){
+    for (int j = 0; j < 9; j++){
+        System.Console.WriteLine(numbers[i][j]);
+    }
 }
