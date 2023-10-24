@@ -21,44 +21,47 @@ using System.Threading.Tasks;
 
 List<List<List<string>>> numbersInCard = new List<List<List<string>>>(){
 new List<List<string>>{
-new List<string>{"1", "2", "3", "4", "5", "6", "7", "8", "9"}, 
-new List<string>{"1", "2", "3", "4", "5", "6", "7", "8", "9"}, 
-new List<string>{"1", "2", "3", "4", "5", "6", "7", "8", "9"}},
-
+new List<string>{"1", "x", "21", "31", "40", "x", "x", "x", "80"},
+new List<string>{"x", "13", "x", "x", "x", "51", "64", "72", "88"},
+new List<string>{"7", "17", "x", "x", "46", "58", "66", "x", "x"}
+},
 new List<List<string>> {
-new List<string>{"1", "2", "3", "4", "5", "6", "7", "8", "9"},
-new List<string>{"1", "2", "3", "4", "5", "6", "7", "8", "9"},
-new List<string>{"1", "2", "3", "4", "5", "6", "7", "8", "9"}
+new List<string>{"1", "11", "x", "33", "42", "52", "x", "x", "x"},
+new List<string>{"x", "x", "27", "35", "x", "x", "68", "75", "89"},
+new List<string>{"x", "18", "29", "x", "x", "x", "69", "77", "90"}
 },
 
 new List<List<string>>{
-new List<string>{"1", "2", "3", "4", "5", "6", "7", "8", "9"},
-new List<string>{"1", "2", "3", "4", "5", "6", "7", "8", "9"},
-new List<string>{"1", "2", "3", "4", "5", "6", "7", "8", "9"}
+new List<string>{"1", "x", "x", "33", "x", "53", "x", "70", "81"},
+new List<string>{"x", "17", "27", "x", "48", "54", "x", "x", "83"},
+new List<string>{"7", "18", "x", "x", "x", "x", "67", "75", "86"}
 },
 new List<List<string>>{	
-new List<string>{"1", "2", "3", "4", "5", "6", "7", "8", "9"},
-new List<string>{"1", "2", "3", "4", "5", "6", "7", "8", "9"},
-new List<string>{"1", "2", "3", "4", "5", "6", "7", "8", "9"}
+new List<string>{"2", "x", "20", "33", "x", "51", "62", "x", "x"},
+new List<string>{"x", "15", "x", "x", "44", "53", "64", "72", "x"},
+new List<string>{"x", "x", "x", "39", "x", "56", "65", "74", "90"}
 },
 new List<List<string>>{
-new List<string>{"1", "2", "3", "4", "5", "6", "7", "8", "9"},
-new List<string>{"1", "2", "3", "4", "5", "6", "7", "8", "9"},
-new List<string>{"1", "2", "3", "4", "5", "6", "7", "8", "9"}
+new List<string>{"4", "12", "x", "30", "x", "51", "x", "x", "82"},
+new List<string>{"x", "13", "24", "31", "x", "x", "x", "73", "84"},
+new List<string>{"x", "x", "x", "x", "46", "55", "68", "74", "88"}
 }
 };
 
+string[] names = {"Jonas", "Tobias", "Kristian", "Mads", "Charlie"};
+
+for (int i = 0; i < 5; i++){
+    Console.WriteLine(names[i]);
 foreach (List<List<string>> row in numbersInCard){
     foreach (List<string> plade in row){
 	    foreach (string number in plade){
+		Console.Write(number + " ");
 
-	Console.Write(number + " ");
-
-	    }
+	}
 	    Console.WriteLine();
     }
     Console.WriteLine();
-}
+}}
 
 //class bankoCard{
 //    public int[,] card = new int[3,9];
