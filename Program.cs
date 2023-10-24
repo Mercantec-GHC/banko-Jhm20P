@@ -1,50 +1,57 @@
-﻿// System.Console.WriteLine("Banko");
-// Random number = new Random();
-// int firstRow = number.Next(0, 91);
-// int seccondRow = number.Next(0, 91);
-// int thirdRow = number.Next(0, 91);
-// int[,] numbers = new int[3, 9];
-// for (int i = 0; i<3; i++){
-//     for (int j = 0; j < 9; j++){
-//         System.Console.WriteLine(numbers[i, j]);
-//     }
-// }
+﻿//i need to display the numbers in the array in a 3x9 grid
+//List<List<int>> numbers = new List<List<int>>();
+//for (int i = 0; i < 3; i++){
+//    numbers.Add(new List<int>());
+//    for (int j = 0; j < 9; j++){
+//	 numbers[i][j];
+//    }
+//}
 
-
-using System.Globalization;
-
-// string[,] firstBankoCard ={{" ", " ", "20", "30", "43", "55", " ", "70", " "}, {"4", "14", " ", "33", "44", " ", "67", " ", " "}, {" ", " ", "29", " ", "49", " ", "68", "78", "87"}};
-// for (int i = 0; i < firstBankoCard.GetLength(0); i++){
-//     for (int j = 0; j < firstBankoCard.GetLength(1); j++){
-//         System.Console.WriteLine(firstBankoCard[i,j] + " ");
-//     }
-// }
-
-
-string[,] firstBankoCard = { { " ", " ", "20", "30", "43", "55", " ", "70", " " }, { "4", "14", " ", "33", "44", " ", "67", " ", " " }, { " ", " ", "29", " ", "49", " ", "68", "78", "87" } };
-// for (int i = 0; i < firstBankoCard.GetLength(0); i++)
-// {
-//     for (int j = 0; j < firstBankoCard.GetLength(1); j++)
-//     {
-
-
-//             string bankoCard = string.Join(" ", firstBankoCard[i, j]);
-//             System.Console.WriteLine(bankoCard);
-//     }
-// }
-
-// foreach (string number in firstBankoCard){
-//     string bankoCard2 = String.Join(number, number);
-//     System.Console.WriteLine(bankoCard2);
-// }
-//i need to display the numbers in the array in a 3x9 grid
-List<List<int>> numbers = new List<List<int>>();
-Random number = new Random();
-int firstRow = number.Next(0, 91);
-int seccondRow = number.Next(0, 91);
-int thirdRow = number.Next(0, 91);
-for (int i = 0; i<3; i++){
-    for (int j = 0; j < 9; j++){
-        System.Console.WriteLine(numbers[i][j]);
-    }
+//foreach (List<int> row in numbers){
+ //   foreach (int number in row){
+//	Console.Write(number + " ");
+  //  }
+ //   Console.WriteLine();
+//}
+using System;
+using System.Collections.Generic;
+List<bankoCard> cards = new List<bankoCard>();
+for (int i = 0; i < 100; i++){
+    cards.Add(new bankoCard());
 }
+foreach (bankoCard card in cards){
+    Console.WriteLine(card);
+}
+
+
+
+//class bankoCard{
+//    public int[,] card = new int[3,9];
+//    public bankoCard(){
+//	Random random = new Random();
+//	for (int i = 0; i < 3; i++){
+//	    for (int j = 0; j < 5; j++){
+//		card[random.Next(i),j] = random.Next(1, 91);
+//	    }
+//	}
+//    }
+//    public void printCard(){
+//	for (int i = 0; i < 3; i++){
+//	    for (int j = 0; j < 9; j++){
+//		Console.Write(card[i,j] + " ");
+//	    }
+//	    Console.WriteLine();
+//	}
+//    }
+//}
+
+
+class bankoCard{
+
+public string id;
+
+public int[,] card = new int[3,9];
+
+
+}
+
