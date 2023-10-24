@@ -20,7 +20,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 List<List<string>> numbersInCard = new List<List<string>>();
-numbersInCard.Add(new List<string>{"1","2","3","4","5","6","7","8","9"});
+numbersInCard.Add(new List<string>{"2","2","3","4","5","6","7","8","9"});
 numbersInCard.Add(new List<string>{"1","2","3","4","5","6","7","8","9"});
 numbersInCard.Add(new List<string>{"1","2","3","4","5","6","7","8","9"});
 
