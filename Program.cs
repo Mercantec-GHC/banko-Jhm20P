@@ -15,15 +15,22 @@
 //}
 using System;
 using System.Collections.Generic;
-List<bankoCard> cards = new List<bankoCard>();
-for (int i = 0; i < 100; i++){
-    cards.Add(new bankoCard());
-}
-foreach (bankoCard card in cards){
-    Console.WriteLine(card);
-}
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+List<List<string>> numbersInCard = new List<List<string>>();
+numbersInCard.Add(new List<string>{"1","2","3","4","5","6","7","8","9"});
+numbersInCard.Add(new List<string>{"1","2","3","4","5","6","7","8","9"});
+numbersInCard.Add(new List<string>{"1","2","3","4","5","6","7","8","9"});
 
 
+foreach (List<string> row in numbersInCard){
+    foreach (string number in row){
+	Console.Write(number + " ");
+    }
+    Console.WriteLine();
+}
 
 //class bankoCard{
 //    public int[,] card = new int[3,9];
@@ -45,13 +52,4 @@ foreach (bankoCard card in cards){
 //    }
 //}
 
-
-class bankoCard{
-
-public string id;
-
-public int[,] card = new int[3,9];
-
-
-}
 
