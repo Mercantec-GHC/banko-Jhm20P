@@ -19,15 +19,43 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-List<List<string>> numbersInCard = new List<List<string>>();
-numbersInCard.Add(new List<string>{"2","2","3","4","5","6","7","8","9"});
-numbersInCard.Add(new List<string>{"1","2","3","4","5","6","7","8","9"});
-numbersInCard.Add(new List<string>{"1","2","3","4","5","6","7","8","9"});
+List<List<List<string>>> numbersInCard = new List<List<List<string>>>(){
+new List<List<string>>{
+new List<string>{"1", "2", "3", "4", "5", "6", "7", "8", "9"}, 
+new List<string>{"1", "2", "3", "4", "5", "6", "7", "8", "9"}, 
+new List<string>{"1", "2", "3", "4", "5", "6", "7", "8", "9"}},
 
+new List<List<string>> {
+new List<string>{"1", "2", "3", "4", "5", "6", "7", "8", "9"},
+new List<string>{"1", "2", "3", "4", "5", "6", "7", "8", "9"},
+new List<string>{"1", "2", "3", "4", "5", "6", "7", "8", "9"}
+},
 
-foreach (List<string> row in numbersInCard){
-    foreach (string number in row){
+new List<List<string>>{
+new List<string>{"1", "2", "3", "4", "5", "6", "7", "8", "9"},
+new List<string>{"1", "2", "3", "4", "5", "6", "7", "8", "9"},
+new List<string>{"1", "2", "3", "4", "5", "6", "7", "8", "9"}
+},
+new List<List<string>>{	
+new List<string>{"1", "2", "3", "4", "5", "6", "7", "8", "9"},
+new List<string>{"1", "2", "3", "4", "5", "6", "7", "8", "9"},
+new List<string>{"1", "2", "3", "4", "5", "6", "7", "8", "9"}
+},
+new List<List<string>>{
+new List<string>{"1", "2", "3", "4", "5", "6", "7", "8", "9"},
+new List<string>{"1", "2", "3", "4", "5", "6", "7", "8", "9"},
+new List<string>{"1", "2", "3", "4", "5", "6", "7", "8", "9"}
+}
+};
+
+foreach (List<List<string>> row in numbersInCard){
+    foreach (List<string> plade in row){
+	    foreach (string number in plade){
+
 	Console.Write(number + " ");
+
+	    }
+	    Console.WriteLine();
     }
     Console.WriteLine();
 }
