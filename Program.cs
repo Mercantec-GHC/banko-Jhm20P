@@ -50,8 +50,6 @@ new List<string>{"x", "x", "x", "x", "46", "55", "68", "74", "88"}
 
 string[] names = {"Jonas", "Tobias", "Kristian", "Mads", "Charlie"};
 
-for (int i = 0; i < 5; i++){
-    Console.WriteLine(names[i]);
 foreach (List<List<string>> row in numbersInCard){
     foreach (List<string> plade in row){
 	    foreach (string number in plade){
@@ -61,7 +59,33 @@ foreach (List<List<string>> row in numbersInCard){
 	    Console.WriteLine();
     }
     Console.WriteLine();
-}}
+}
+
+bool fullPlayerCard = false;
+bool oneRowPlayerCard = false;
+List<string> inputNumbers = new List<string>(); 
+string? inputForNumber;
+bool input = false;
+while(!fullPlayerCard){
+inputForNumber = Console.ReadLine();
+if (inputForNumber != null) {
+	inputForNumber.ToLower().Trim();
+}
+
+foreach (List<List<string>> row in numbersInCard) {
+	foreach (List<string> plade in row){
+		foreach (string number in plade){
+			if(number.Contains(inputForNumber))
+				inputNumbers.Add(number);
+		}
+	}
+
+
+}
+foreach (string numbers in inputNumbers){
+	Console.WriteLine(numbers);
+}
+}
 
 //class bankoCard{
 //    public int[,] card = new int[3,9];
