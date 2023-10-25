@@ -62,29 +62,55 @@ foreach (List<List<string>> row in numbersInCard){
 }
 
 bool fullPlayerCard = false;
-bool oneRowPlayerCard = false;
-List<string> inputNumbers = new List<string>(); 
-string? inputForNumber;
-bool input = false;
-while(!fullPlayerCard){
-inputForNumber = Console.ReadLine();
-if (inputForNumber != null) {
-	inputForNumber.ToLower().Trim();
-}
-foreach (List<List<string>> row in numbersInCard) {
-	foreach (List<string> plade in row){
-		foreach (string number in plade){
-			if(number == inputForNumber)
-				inputNumbers.Add(number);
+bool firtRow = false;
+bool seccondRow = false;
+List<string> inputNumbers = new List<string>();
+int rowsWon = 0; 
+
+for (int playerCardIdx = 0; playerCardIdx < numbersInCard.Count; playerCardIdx++) {
+    for (int rowIdx = 0; rowIdx < numbersInCard[playerCardIdx].Count; rowIdx++) {
+        
+        inputNumbers.Clear();
+
+        Console.WriteLine($"Checking Row {rowIdx + 1} of Player Card {playerCardIdx + 1}...");
+
+        while (!fullPlayerCard) {
+		while(!seccondRow){
+			while(!firstRow){
+            string inputForNumber = Console.ReadLine();
+
+            if (inputForNumber != null) {
+                inputForNumber = inputForNumber.ToLower().Trim();
+            }
+
+            foreach (string number in numbersInCard[playerCardIdx][rowIdx]) {
+                if (number == inputForNumber)
+                    inputNumbers.Add(number);
+            }
+
+            foreach (string number in inputNumbers) {
+                Console.WriteLine(number + " is a match!");
+            }
+
+            Console.WriteLine($"You have {inputNumbers.Count} numbers correct in Row {rowIdx + 1} of Player Card {playerCardIdx + 1}.");
+
+            if (inputNumbers.Count == numbersInCard[playerCardIdx][rowIdx].Count && 
+                inputNumbers.All(num => num != "x")) {
+                Console.WriteLine("You have won this row!");
+                rowsWon++;
+		firstRow = true;
+            }
+
+            if (firstRow) {
+                break;
+            }
+			}
 		}
-	}
+        }
+    }
+}
 
-
-}
-foreach (string numbers in inputNumbers){
-	Console.WriteLine(numbers);
-}
-}
+Console.WriteLine($"You have won {rowsWon} rows!");
 
 //class bankoCard{
 //    public int[,] card = new int[3,9];
