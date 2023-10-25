@@ -71,11 +71,10 @@ inputForNumber = Console.ReadLine();
 if (inputForNumber != null) {
 	inputForNumber.ToLower().Trim();
 }
-
 foreach (List<List<string>> row in numbersInCard) {
 	foreach (List<string> plade in row){
 		foreach (string number in plade){
-			if(number.Contains(inputForNumber))
+			if(number == inputForNumber)
 				inputNumbers.Add(number);
 		}
 	}
