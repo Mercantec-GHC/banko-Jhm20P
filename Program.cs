@@ -62,7 +62,7 @@ foreach (List<List<string>> row in numbersInCard){
 }
 
 bool fullPlayerCard = false;
-bool firtRow = false;
+bool firstRow = false;
 bool seccondRow = false;
 List<string> inputNumbers = new List<string>();
 int rowsWon = 0; 
@@ -105,7 +105,28 @@ for (int playerCardIdx = 0; playerCardIdx < numbersInCard.Count; playerCardIdx++
                 break;
             }
 			}
+
+			if(inputNumbers.Count == numbersInCard[playerCardIdx][rowIdx].Count && 
+		inputNumbers.All(num => num != "x")) {
+		Console.WriteLine("You have won this row!");
+		rowsWon++;
+		seccondRow = true;
+			}
+
+			if (seccondRow){
+				break;
+			}
 		}
+
+		if(inputNumbers.Count == numbersInCard[playerCardIdx][rowIdx].Count && inputNumbers.All(num => num != "x")){
+			Console.WriteLine("You have won this row!");
+			rowsWon++;
+			fullPlayerCard = true;
+		}
+		if (fullPlayerCard){
+			break;
+		}
+
         }
     }
 }
