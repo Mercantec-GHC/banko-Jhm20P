@@ -128,11 +128,18 @@ class BingoGame
 			foreach (List<int> plade in row){
 
 			foreach (int number in plade){
-				int inputNumber = number;
-				if (!numbersInRow.Contains(inputNumber))
+				if (number >= 1 && number <= 90 && !numbersInRow.Contains(number))
 				{
-					card.Rows[i][inputNumber % 10 - 1] = inputNumber;
-					numbersInRow.Add(inputNumber);
+
+					for (int j = 0; j < 9; j++)
+					{
+						if (card.Rows[i][j] == 0)
+						{
+							card.Rows[i][j] = number;
+							numbersInRow.Add(number);
+							break;
+						}
+					}
 				}
 			}
 		   }
