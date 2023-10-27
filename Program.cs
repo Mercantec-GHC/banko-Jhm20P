@@ -155,7 +155,7 @@ class BingoGame
             bool rowComplete = true;
             foreach (int number in card.numbers[i])
             {
-                if (number != 0 && !calledNumbers.Contains(number))
+                if (number != 0 && calledNumbers[i] != number)
                 {
                     rowComplete = false;
                     break;
