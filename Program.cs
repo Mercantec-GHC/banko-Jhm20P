@@ -155,6 +155,10 @@ class BingoGame
             bool rowComplete = true;
             foreach (int number in card.numbers[i])
             {
+                if(card.numbers[i].Contains(calledNumbers[i])){
+                    Console.WriteLine($"Player {card.PlayerId} has a match for number {calledNumbers[i]}!");
+                }
+
                 if (number != 0 && calledNumbers[i] != number)
                 {
                     rowComplete = false;
