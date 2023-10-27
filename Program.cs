@@ -51,137 +51,91 @@ using System.Linq;
 
 class BingoCard
 {
-   public List<List<List<int>>> numbers = new List<List<List<int>>>(); 
+    public List<List<int>> numbers = new List<List<int>>();
     public int PlayerId { get; set; }
     public BingoCard(int playerId)
     {
-		numbers = new List<List<List<int>>>(){
-	   new List<List<int>>{
-		new List<int>{0, 0, 20, 30, 43, 55, 0,  70, 0},
-		new List<int>{4, 14, 0, 33, 44, 0, 67, 0, 0},
-		new List<int>{0, 0, 29, 0, 49, 0, 68, 78, 87},
-	   }, 
-	   new List<List<int>>{
-		new List<int>{0, 0, 24, 30, 40, 54, 64, 0, 0},
-		new List<int>{0, 18, 27, 0, 42, 0, 65, 71, 0},
-		new List<int>{7, 0, 0, 0, 43, 57, 69, 0, 89},
-	   },
-	   new List<List<int>>{
-		new List<int>{2, 0, 20, 34, 0, 52, 60, 0, 0},
-		new List<int>{0, 14, 0, 35, 0, 0, 64, 76, 84},
-		new List<int>{7, 0, 26, 0, 47, 55, 0, 0, 88},
-	   },
-	   new List<List<int>>{
-		new List<int>{1, 0, 0, 30, 43, 0, 62, 0, 83},
-		new List<int>{8, 14, 26, 0, 0, 55, 0, 76, 0},
-		new List<int>{9, 0, 0, 38, 49, 0, 0, 79, 90},
-	   },
-	   new List<List<int>>{
-		new List<int>{5, 10, 0, 0, 44, 51, 0, 70, 0},
-		new List<int>{0, 13, 25, 36, 47, 0, 62, 0, 0},
-		new List<int>{0, 17, 29, 39, 49, 0, 0, 0, 89},
-	   }
-    };
+        switch (playerId)
+        {
+            case 1:
+                numbers = new List<List<int>>{
+        new List<int>{0, 0, 20, 30, 43, 55, 0,  70, 0},
+        new List<int>{4, 14, 0, 33, 44, 0, 67, 0, 0},
+        new List<int>{0, 0, 29, 0, 49, 0, 68, 78, 87},
+       };
+                break;
+            case 2:
+                numbers = new List<List<int>>{
+        new List<int>{0, 0, 24, 30, 40, 54, 64, 0, 0},
+        new List<int>{0, 18, 27, 0, 42, 0, 65, 71, 0},
+        new List<int>{7, 0, 0, 0, 43, 57, 69, 0, 89},
+       };
+                break;
+            case 3:
+                numbers = new List<List<int>>{
+        new List<int>{2, 0, 20, 34, 0, 52, 60, 0, 0},
+        new List<int>{0, 14, 0, 35, 0, 0, 64, 76, 84},
+        new List<int>{7, 0, 26, 0, 47, 55, 0, 0, 88},
+       };
+                break;
+            case 4:
+                numbers = new List<List<int>>{
+        new List<int>{1, 0, 0, 30, 43, 0, 62, 0, 83},
+        new List<int>{8, 14, 26, 0, 0, 55, 0, 76, 0},
+        new List<int>{9, 0, 0, 38, 49, 0, 0, 79, 90},
+       };
+                break;
+            case 5:
+                numbers = new List<List<int>>{
+        new List<int>{5, 10, 0, 0, 44, 51, 0, 70, 0},
+        new List<int>{0, 13, 25, 36, 47, 0, 62, 0, 0},
+        new List<int>{0, 17, 29, 39, 49, 0, 0, 0, 89},
+       };
+                break;
+            default:
+                Console.WriteLine("Error");
+                break;
+        }
         PlayerId = playerId;
     }
 
     public void PrintCard()
     {
         Console.WriteLine($"Player {PlayerId}'s Card:");
-	foreach (List<List<int>> row in numbers){
-		foreach (List<int> plade in row){
-			foreach (int number in plade){
-				if(number == 0){
-					Console.Write(" \t");
-				}
-				else{
-					Console.Write($"{number}\t");
-				}
-			}
-			Console.WriteLine();
-		}
 
-	}
+        for (int i = 0; i < numbers.Count; i++)
+        {
+            foreach (int number in numbers[i])
+            {
+                if (number == 0)
+                {
+                    Console.Write(" \t");
+                }
+                else
+                {
+                    Console.Write($"{number}\t");
+                }
+            }
+            Console.WriteLine();
+
+
+        }
     }
 }
 
 class BingoGame
 {
-//    internal List<BingoCard> cards = new List<BingoCard>();
-//    private List<int> calledNumbers = new List<int>();
-//          public void CreateCards(int numPlayers)
-//    {
-//        for (int playerId = 1; playerId <= numPlayers; playerId++)
-//        {
-//            var card = new BingoCard(playerId);
-//            Random random = new Random();
-//            for (int i = 0; i < 3; i++)
-//            {
-//            cards.Add(card);}
-//    }
-//    }
-//    public void CallNumber(int number)
-//    {
-//        calledNumbers.Add(number);
-//        Console.WriteLine($"Called number: {number}");
-//        foreach (var card in cards)
-//        {
-//            card.PrintCard();
-//            CheckForMatches(card);
-//        }
-//    }
-//
-//public void CheckForMatches(BingoCard card)
-//{
-//    int rowsMatched = 0;
-//foreach(List<List<int>> row in card.numbers){
-//        foreach(List<int> plade in row){
-//        bool rowComplete = true;
-//                foreach(int number in plade){
-//                        if (number != 0 && !calledNumbers.Contains(number)){
-//                                rowComplete = false;
-//                                break;
-//
-//                        }
-//                }
-//                if (rowComplete){
-//                        Console.WriteLine($"Player {card.PlayerId} has completed row {row.Count + 1}");
-//			rowsMatched++;
-//                }
-//        }
-//}
-//    if (rowsMatched == 3)
-//    {
-//        Console.WriteLine($"Congratulations! Player {card.PlayerId} has Bingo!");
-//    }
-//    else if (rowsMatched == 2)
-//    {
-//        Console.WriteLine($"Player {card.PlayerId} has completed 2 rows!");
-//    }
-//}
-}
-
-class Program
-{
-    static void Main()
-    {
-
-
     internal List<BingoCard> cards = new List<BingoCard>();
     private List<int> calledNumbers = new List<int>();
-          public void CreateCards(int numPlayers)
+    public void CreateCards(int numPlayers)
     {
-        for (int BingCard.playerId = 1; BingoCard.playerId <= numPlayers; BingoCard.playerId++)
+        for (int playerId = 1; playerId <= numPlayers; playerId++)
         {
             var card = new BingoCard(playerId);
             Random random = new Random();
-            for (int i = 0; i < 3; i++)
-            {
-            cards.Add(card);}
+            cards.Add(card);
+        }
     }
-    }
-
-	CreateCards(5);
     public void CallNumber(int number)
     {
         calledNumbers.Add(number);
@@ -193,41 +147,56 @@ class Program
         }
     }
 
-public void CheckForMatches(BingoCard card)
-{
-    int rowsMatched = 0;
-foreach(List<List<int>> row in card.numbers){
-        foreach(List<int> plade in row){
-        bool rowComplete = true;
-                foreach(int number in plade){
-                        if (number != 0 && !calledNumbers.Contains(number)){
-                                rowComplete = false;
-                                break;
-
-                        }
-                }
-                if (rowComplete){
-                        Console.WriteLine($"Player {card.PlayerId} has completed row {row.Count + 1}");
-			rowsMatched++;
-                }
-        }
-}
-    if (rowsMatched == 3)
+    public void CheckForMatches(BingoCard card)
     {
-        Console.WriteLine($"Congratulations! Player {card.PlayerId} has Bingo!");
-    }
-    else if (rowsMatched == 2)
-    {
-        Console.WriteLine($"Player {card.PlayerId} has completed 2 rows!");
-    }
-}
-	int inputNumber = int.Parse(Console.ReadLine());
-
-        foreach (var number in game.cards)
+        int rowsMatched = 0;
+        for (int i = 0; i < card.numbers.Count; i++)
         {
-            game.CallNumber(inputNumber);
-            Console.WriteLine("Press Enter to continue...");
-            Console.ReadLine();
+            bool rowComplete = true;
+            foreach (int number in card.numbers[i])
+            {
+                if (number != 0 && !calledNumbers.Contains(number))
+                {
+                    rowComplete = false;
+                    break;
+
+                }
+            }
+            if (rowComplete)
+            {
+                Console.WriteLine($"Player {card.PlayerId} has completed row {i + 1}");
+                rowsMatched++;
+            }
+        }
+        if (rowsMatched == 3)
+        {
+            Console.WriteLine($"Congratulations! Player {card.PlayerId} has Bingo!");
+        }
+        else if (rowsMatched == 2)
+        {
+            Console.WriteLine($"Player {card.PlayerId} has completed 2 rows!");
+        }
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        BingoGame game = new BingoGame();
+        game.CreateCards(5);
+        int inputNumber;
+
+
+        bool isvalid = int.TryParse(Console.ReadLine(), out inputNumber);
+        if (isvalid)
+        {
+            foreach (var number in game.cards)
+            {
+                game.CallNumber(inputNumber);
+                Console.WriteLine("Press Enter to continue...");
+                Console.ReadLine();
+            }
         }
         // To check a specific number
         //Console.WriteLine("Enter a number to check: ");
