@@ -47,6 +47,7 @@
 //}
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.Contracts;
 using System.Linq;
 
 class BingoCard
@@ -127,6 +128,7 @@ class BingoGame
 {
     internal List<BingoCard> cards = new List<BingoCard>();
     private List<int> calledNumbers = new List<int>();
+    public int rowsMatched = 0;
     public void CreateCards(int numPlayers)
     {
         for (int playerId = 1; playerId <= numPlayers; playerId++)
@@ -136,8 +138,13 @@ class BingoGame
             cards.Add(card);
         }
     }
-    public void CallNumber(int number)
+    public void CallNumber(/*int number*/)
     {
+        Console.WriteLine("Enter a number to check: ");
+        int number;
+        
+        bool isvalid = int.TryParse(Console.ReadLine(), out number);
+        if(isvalid){
         calledNumbers.Add(number);
         Console.WriteLine($"Called number: {number}");
         foreach (var card in cards)
@@ -145,21 +152,22 @@ class BingoGame
             card.PrintCard();
             CheckForMatches(card);
         }
+        }
     }
 
     public void CheckForMatches(BingoCard card)
     {
-        int rowsMatched = 0;
+        
         for (int i = 0; i < card.numbers.Count; i++)
         {
             bool rowComplete = true;
             foreach (int number in card.numbers[i])
             {
-                if(card.numbers[i].Contains(calledNumbers[i])){
-                    Console.WriteLine($"Player {card.PlayerId} has a match for number {calledNumbers[i]}!");
+                if( calledNumbers.Contains(number)){
+                    Console.WriteLine($"Player {card.PlayerId} has a match for number {number}!");
                 }
 
-                if (number != 0 && calledNumbers[i] != number)
+                if (number != 0 && !calledNumbers.Contains(number))
                 {
                     rowComplete = false;
                     break;
@@ -189,19 +197,17 @@ class Program
     {
         BingoGame game = new BingoGame();
         game.CreateCards(5);
-        int inputNumber;
-
-
-        bool isvalid = int.TryParse(Console.ReadLine(), out inputNumber);
-        if (isvalid)
-        {
-            foreach (var number in game.cards)
+        // int inputNumber;
+        // bool isvalid = int.TryParse(Console.ReadLine(), out inputNumber);
+        // if (isvalid)
+        // {
+            while(game.rowsMatched < 3)
             {
-                game.CallNumber(inputNumber);
+                game.CallNumber();
                 Console.WriteLine("Press Enter to continue...");
                 Console.ReadLine();
             }
-        }
+        //}
         // To check a specific number
         //Console.WriteLine("Enter a number to check: ");
         //int checkNumber = int.Parse(Console.ReadLine());
